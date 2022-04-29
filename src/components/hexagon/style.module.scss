@@ -1,0 +1,99 @@
+@import 'src/assets/style/mixins';
+
+.hexagon {
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    border: 1px soli green;
+    display: flex;
+    flex: 1;
+    max-width: 100px;
+    min-width: 50px;
+    width: adaptive(50, 100, 400, 1280);
+    
+    &__wrapper {
+        position: relative;
+    }
+}
+
+.hexagon__img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.locationCity {
+    width: 20px;
+    height: 20px;
+    border: 1px solid red;
+    z-index: 2;
+    border-radius: 10px;
+    position: absolute;
+    background-color: red;
+    transition: background 0.6s;
+    display: none;
+    &__top {
+        top: 0;
+        left: calc( 50% - 10px);
+    }
+    &__topRight {
+        top: 13px;
+        right: -10px;
+    }
+    &__topLeft {
+        top: 13px;
+        left: -10px;
+    }
+    &__bottomRight {
+        right: -10px;
+        bottom: 13px;
+    }
+    &__bottomLeft {
+        left: -10px;
+        bottom: 13px;
+    }
+    &__bottom {
+        bottom: 0;
+        left: calc(50% - 10px);
+    }
+    &:hover {
+        opacity: 0.4;
+    }
+}
+
+.locationRoad {
+    width: 20px;
+    height: 20px;
+    border: 1px solid blue;
+    z-index: 99;
+    border-radius: 10px;
+    position: absolute;
+    background-color: blue;
+    transition: background 0.6s;
+    &__left {
+        top: calc(50% - 10px);
+        left: -10px;
+    }
+    &__topLeft {
+        top: 10px;
+        left: calc(25% - 10px);
+    }
+    &__bottomLeft {
+        bottom: 10px;
+        left: calc(25% - 10px);
+    }
+    &__right {
+        top: calc(50% - 10px);
+        right: -10px;
+    }
+    &__topRight {
+        top: 10px;
+        right: calc(25% - 10px);
+    }
+    &__bottomRight {
+        bottom: 10px;
+        right: calc(25% - 10px);
+    }
+    
+    &:hover {
+        opacity: 0.4;
+    }
+}

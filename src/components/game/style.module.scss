@@ -1,3 +1,57 @@
+@import 'src/assets/style/mixins';
+
 .game {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
 }
+
+.playingField {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    // margin: -70px 0 -70px;
+    // background-image: url(../../assets/imgs/hexagon/forest.png);
+     position: relative;
+    &:nth-child(4) {
+        top: adaptive(14, 22, 400, 1280);
+    }
+    &:nth-child(6) {
+        top: adaptive(-14, -22, 400, 1280);
+    }
+
+    &:nth-child(3) {
+        top: adaptive(29, 45, 400, 1280);
+    }
+    &:nth-child(7) {
+        top: adaptive(-29, -45, 400, 1280);
+    }
+
+    &:nth-child(2) {
+        top: adaptive(44, 68, 400, 1280);
+    }
+    &:nth-child(8) {
+        top: adaptive(-44, -68, 400, 1280);
+    }
+
+    &:nth-child(1) {
+        top: adaptive(58, 92, 400, 1280);
+    }
+    &:nth-child(9) {
+        top: adaptive(-58, -92, 400, 1280);
+    }
+}
+
