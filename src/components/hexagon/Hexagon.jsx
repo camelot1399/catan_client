@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { HexagonLocationCity } from "./HexagonLocationCity";
 import { HexagonRoad } from "./HexagonRoad";
 import style from './style.module.scss';
 
 export const Hexagon = ({img, id, locationsCity, roads}) => {
-
-    console.log('roads', roads);
 
     return (
         <div className={style.hexagon__wrapper}>
@@ -28,6 +26,7 @@ export const Hexagon = ({img, id, locationsCity, roads}) => {
                 <HexagonRoad 
                     key={road.id}
                     place={road.place}
+                    road={road}
                 />
             ))}
         </div>

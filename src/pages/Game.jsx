@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Draggable, {DraggableCore} from 'react-draggable';
+import { City } from "../components/city/City";
 import style from '../components/game/style.module.scss';
 import { Hexagon } from "../components/hexagon/Hexagon";
+import { Road } from "../components/road/Road";
+import { Village } from "../components/village/Village";
 import { getMaps } from "../utils/maps";
 
 export const Game = () => {
@@ -8,7 +12,6 @@ export const Game = () => {
 
     useEffect(() => {
         createMaps();
-        console.log('maps', maps);
     }, []);
 
     const createMaps = async () => {
@@ -20,6 +23,30 @@ export const Game = () => {
         <div className={style.game}>
 
             <div className={style.playingField}>
+
+            <Draggable
+                // onDrag={e => console.log(e)}
+                onStop={e => console.log(e.path[0])}
+            >
+                
+                <div ><Road /></div>
+            </Draggable>
+
+            <Draggable 
+                onStop={e => console.log(e)}
+                disabled={true}
+            >
+                <div>
+                    <Village />
+                </div>
+            </Draggable>
+           
+
+            <Draggable onStop={e => console.log(e)}>
+                <div>
+                    <City />
+                </div>
+            </Draggable>
 
                 <div className={style.rows}>
                     {maps.map(row => (
@@ -38,7 +65,6 @@ export const Game = () => {
 
             </div>
 
-            
         </div>
     )
 }

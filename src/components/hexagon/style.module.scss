@@ -29,7 +29,7 @@
     position: absolute;
     background-color: red;
     transition: background 0.6s;
-    display: none;
+    // display: none;
     &__top {
         top: 0;
         left: calc( 50% - 10px);
@@ -68,6 +68,7 @@
     position: absolute;
     background-color: blue;
     transition: background 0.6s;
+    // display: none;
     &__left {
         top: calc(50% - 10px);
         left: -10px;
